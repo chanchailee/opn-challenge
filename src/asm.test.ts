@@ -57,6 +57,14 @@ describe('opn assignments', () => {
 					expect(actual).toEqual(expected);
 				},
 			);
+
+			describe('out of range score', () => {
+				test('should throw error', () => {
+					const actual = () => getGrade(3000);
+					const error = new Error('out of range score');
+					expect(actual).toThrowError(error);
+				});
+			});
 		});
 	});
 });
